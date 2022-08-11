@@ -7,14 +7,15 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.google.com/recaptcha/api.js" ></script>
     <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="style.css" />
    
     <title>Sign in & Sign up Form</title>
   </head>
 
   <body>
-
-    
+    <div id="preloader"> </div>
  
  
      
@@ -33,6 +34,9 @@
                       <i class="fas fa-lock"></i>
                       <input type="password" placeholder="Password" />
                     </div>
+                    
+                    <div class="g-recaptcha" data-sitekey="6Lc9sD8hAAAAAD9jUOaoa84ZdNZ9E3UUQHhBws42">
+                    </div>  
                     <input type="submit" value="Login" class="btn solid" />
                     <p class="social-text">Or Sign in with social platforms</p>
                     <div class="icons">
@@ -86,5 +90,7 @@
     
   <script src="script.js"></script>
     <script src="app.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="script.js"></script>
   </body>
 </html>
