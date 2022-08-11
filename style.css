@@ -11,6 +11,13 @@ body{
    
    background-color:  rgb(44 45 54);
 }
+
+/* scroll bar hodden but functioning*/
+
+body::-webkit-scrollbar{
+  display: none;
+
+}
 html{
   scroll-behavior: smooth;
 }
@@ -35,6 +42,19 @@ html{
   position: fixed;
   z-index: 100;
 }
+@media (min-aspect-ratio :16/9){
+  #preloader{
+      width: 100%;
+      height: auto;
+  }
+  
+  }
+  @media (max-aspect-ratio :16/9){
+      #preloader{
+          width: auto;
+          height: 100%;
+      }
+       }
 
 
 /* video + nav bar */
@@ -74,14 +94,6 @@ background-position: center;
 }
 
 nav .logo:hover{
-  width: 50px;
-  height: 50px;
-  background-image: url('image/EV_BUNK_black.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  
-  
   
   }
 nav .logoName a{
@@ -126,9 +138,11 @@ color: white;
 }
 nav .nav-ul .nav-li a:hover{
   text-decoration: none;
-  font-size: 17px;
+
   cursor:default;
   color: black;
+  font-weight: bolder;
+  
   
   }
 .nav-waves{
@@ -171,6 +185,7 @@ nav.sticky .nav-logo-span{
 nav.sticky .nav-logo-span:hover{
   color: #fff;
   font-weight: bolder;
+  
 }
 nav.sticky .logo:hover{
   background-image: url('image/EV_BUNK-removebg-preview.png') ;
@@ -185,6 +200,7 @@ nav.sticky .logo:hover{
 /*  Web Name on video  */
 .front-name{
 text-align:center;
+padding-top: 100PX;
 
 }
 
@@ -260,6 +276,7 @@ text-shadow: 0 0 25px #fff;
     }
 
 }
+/* search bar */
 .search-bar{
 
   display: flex;
@@ -465,6 +482,7 @@ margin: auto;
     1px 1px 0 rgb(44 45 54),
    1px -1px 0 rgb(44 45 54),
   -1px -1px 0 rgb(44 45 54);
+  
 }
 /* Admin Register */
 
