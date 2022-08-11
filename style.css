@@ -300,6 +300,7 @@ width: 150px;
 }
 .search-txt::placeholder{
   color: white;
+  text-align: center;
 
 }
 
@@ -309,13 +310,11 @@ width: 150px;
   text-align: center;
   border: #fff solid;
 }
-.search-box:hover .search-btn img{
-}
 
 .search-txt:focus{
   width: 600px;
-  text-align: center;
-  border: #fff solid;
+
+  border: #fff solid 5px;
 
 }
 
