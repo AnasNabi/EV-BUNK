@@ -27,5 +27,7 @@ $(".option").click(function () {
   
   
 
-
-                                                           
+  var onloadCallback = function() {
+    alert("grecaptcha is ready!");
+  };
+                                                     
