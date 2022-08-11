@@ -7,9 +7,13 @@
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
 }
-body{
-   
-   background-color:  rgb(44 45 54);
+body { 
+  font-family: 'Poppins', sans-serif;
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  background-color: rgb(44 45 54); 
 }
 
 /* scroll bar hodden but functioning*/
