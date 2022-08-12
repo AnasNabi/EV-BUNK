@@ -19,16 +19,18 @@
   </head>
 
   <body>
+ 
     <div id="preloader"> </div>
  
  
-     
+    
             <div class="container">
               
+
     
               <div class="forms-container">
                 <div class="signin-signup">
-                  <form action="#" class="sign-in-form">
+                  <form action="#" class="sign-in-form" method="post" onsubmit="return submitUserForm()">
                     <h2 class="title">Sign in</h2>
                     <div class="input-field">
                       <i class="fas fa-user"></i>
@@ -39,8 +41,8 @@
                       <input type="password" placeholder="Password" />
                     </div>
                     
-                    <div class="g-recaptcha" data-sitekey="6Ldhe2ohAAAAAHGTlrnnEPLb93-2OPR2drs_ioiN">
-                    </div>  
+                    <div class="g-recaptcha" data-sitekey="6Ldhe2ohAAAAAHGTlrnnEPLb93-2OPR2drs_ioiN" data-callback="verifyCaptcha">
+                    </div><div id="g-recaptcha-error"></div>  
                     <input type="submit" value="Login" class="btn solid" />
                     <p class="social-text" style="color: black;">Or Sign in with social platforms</p>
 
@@ -51,12 +53,13 @@
                        <a  href="https://twitter.com/i/flow/login">  <img src="image/371907030_TWITTER_ICON_TRANSPARENT_400.gif"></a>
                          </div>
                   </form>
-                 
+
                 </div>
                 
               </div>
-            
+
               <div class="panels-container"> 
+                
                 <div class="back-btn">
                   <a href="index.html"><img src="image/output-onlinegiftools.gif"></a>
                  </div>
@@ -89,13 +92,16 @@
                 </div>
               </div>
             </div>
-         
+      
        
-
+ <script>
+   function submitUserForm(){
+    var response =grec
+   }
+ </script>
     
   <script src="script.js"></script>
     <script src="app.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    
-  </body>
+    </body>
 </html>

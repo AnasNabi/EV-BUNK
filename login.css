@@ -11,7 +11,7 @@ body{  font-family: "Poppins", sans-serif;
   -moz-user-select: none; 
   -ms-user-select: none; 
   user-select: none; 
-  background-color: rgb(44 45 54); 
+ 
 }
 
 input {
@@ -135,12 +135,12 @@ form.sign-in-form {
   font-weight: 500;
 }
 .input-field:hover{
-  border: solid rgb(44 45 54);
+  border-bottom: solid rgb(44 45 54);
   cursor: pointer;
 
 }
 .input-field:focus-within{
-  border: solid rgb(44 45 54);
+  border-bottom: solid rgb(44 45 54);
   cursor: pointer;
 }
 .social-text {
@@ -182,17 +182,37 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color:transparent;
+  background-color:white;
   color: rgb(44 45 54);
   border: solid rgb(44 45 54);
 }
 
 
-#sign-up-btn:hover{
-color: white;
-width: 150px;
-font-size:large;
-transition: 0.5s;
+
+#sign-up-btn{
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  cursor: default;
+  width: 100;
+  border: none;
+  font-size: 25px;
+  font-weight: 300;
+  letter-spacing: 0.2;
+  letter-spacing: 0.3px;
+}
+#sign-up-btn:after{
+  width: 0px;
+  content: "";
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: whitesmoke;
+  height: 2px;
+  transition: 0.3s;
+}
+#sign-up-btn:hover::after{
+  width: 100%;
 
 }
 
