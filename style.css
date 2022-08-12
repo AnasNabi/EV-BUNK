@@ -192,7 +192,7 @@ z-index: -1;
 
 nav.sticky{
   background-color: rgba(255, 255, 255, 0.5);
-  /*backdrop-filter: blur(5px);*/
+  backdrop-filter: blur(5px);
   box-shadow: 0px 10px 10px 0 rgb(0,0,0,0.5);
 
   
@@ -855,6 +855,8 @@ display: flex;
 
   margin: 50px 0 25px 0;
 }
+
+
 .link p{
 
 width: 100px;
@@ -863,11 +865,14 @@ align-items: center;
 justify-content: center;
 margin: auto;
 }
+
 .link p a{
   color: #fff;
 text-decoration: none;
 }
-
+.link p a:hover{
+  color: black;
+}
 .icons{
 
 width: auto;
@@ -885,9 +890,6 @@ text-decoration: none;
 width: 50px;
 height: 50px;
 
-}
-.icons img:hover{
- 
 }
 
 .footer-text{
