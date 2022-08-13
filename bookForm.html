@@ -1,0 +1,96 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="bookform.css">
+
+<link rel="stylesheet" href="style.css">
+<!-- CSS only -->
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://kit.fontawesome.com/13a51c690d.js" crossorigin="anonymous"></script>
+<!-- title icon  -->
+<title>EV Bunk | Book</title>
+<link rel="icon" href="image/fev.ico" sizes="32X32" type="image/icon type">
+<!-- font link -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+
+</head>
+<body>
+
+
+    <div id="preloader"> </div>
+
+    <div class="container">
+              
+
+    
+        <div class="forms-container">
+          <div class="signin-signup">
+            <form action="#" class="sign-in-form" method="post" onsubmit="return submitUserForm();">
+              <h2 class="title">Sign in</h2>
+              <form action="book.jsp" method="post" >
+                
+                <input type="hidden" name="slot_id" value="<%=slot.getSlotId()%>" /><br>
+                <input type="hidden" name="adm_id" value="<%=slot.getAdmId()%>" /><br>
+                <input type="hidden" name="isBooked" value="<%=slot.getIsBooked()%>" /><br>
+                <div class="input-field">
+                  <input type="text" name="phone_no"  value="<%=slot.getPhoneNo()%>" ></div>
+                <div class="input-field">
+                <input type="text" name="slot_timingStart" value="<%=slot.getSlotTimingStart()%>" readonly /><br>
+
+                </div>
+                <div class="input-field">
+                <input type="text" name="slot_timingEnd" value="<%=slot.getSlotTimingEnd()%>" readonly />
+                </div>
+                <div class="input-field">
+                <input type="text" name="adm_city" value="<%=slot.getAdmCity()%>"  readonly/>
+                </div>
+                <input type="submit" value="Update" /><br>
+            </form>
+              <p class="social-text" style="color: black;">Or Sign in with social platforms</p>
+
+              <div class="icons">
+                <a href="index.html"> <img  src="image/371907300_INSTAGRAM_ICON_TRANSPARENT_400.gif"> </a>
+                 <a href="https://www.facebook.com/">    <img src="image/371907490_FACEBOOK_ICON_TRANSPARENT_400.gif"></a>
+                 <a href="https://www.linkedin.com/">     <img src="image/372102050_LINKEDIN_ICON_TRANSPARENT_1080.gif"></a>
+                 <a  href="https://twitter.com/i/flow/login">  <img src="image/371907030_TWITTER_ICON_TRANSPARENT_400.gif"></a>
+                   </div>
+            </form>
+
+          </div>
+          
+        </div>
+
+        <div class="panels-container"> 
+          
+          <div class="back-btn">
+            <a href="index.html"> <img src="image/output-onlinegiftools.gif"></a> 
+           </div>
+          <div class="panel left-panel">
+            
+            <div class="content">
+              
+              <h3>New here ?</h3>
+              <p>Earn with us. Become a part of EV charging network. Be a proud owner of India's smartest and most affordable EV Charging station.
+                
+              </p>
+              <button class="btn transparent" id="sign-up-btn">
+                Sign up
+              </button>
+            </div>
+            <img src="image/EV_BUNK-removebg-preview.png" class="image" alt="" />  <!--images to be added-->
+          </div>
+        
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="script.js"></script>
+</body>
+
+
+
+</html>
