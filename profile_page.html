@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="profile.css" rel="stylesheet" type="text/css" />
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://kit.fontawesome.com/13a51c690d.js" crossorigin="anonymous"></script>
+<!-- title icon  -->
+   <title>EV Bunk | Profile Page</title>
+   <link rel="icon" href="image/fev.ico" sizes="32X32" type="image/icon type">
+   <!-- font link -->
+   
+
+   
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+   
+
+</head>
+<body>
+   <!--  <div class="loader_bg">
+      <div class="loader">
+      
+      </div>
+  </div> --> 
+
+
+ 
+    <nav class= "nav">
+        <div class="logoName">
+           <a href="index.html">
+               <div  class="logo"></div>
+               <span class="nav-logo-span">EV BUNK</span> 
+             </a>
+           </div>
+           
+           <ul class="nav-ul">
+             
+              <li class="nav-li"><a href="#!"><%=admin.getAdminEmail()%></a></li>
+              <li class="nav-li"><a href="logout.html">Logout</a></li>
+           </ul>
+</nav>
+
+
+
+
+	<div class="container-slot">
+	</div>
+	
+	<div class="center">
+  <input type="checkbox" id="show">
+  <label for="show" class="show-btn">Add Slots</label>
+  <div class="container">
+     <label for="show" class="close-btn fas fa-times" title="close"></label>
+     <div class="text">
+        Add Slots
+     </div>
+     <form action="AddSlot.html" method="post">
+        <div class="data">
+           <label>Number Of Slots</label>
+           <input name="slot_timing" type="number" placeholder="Enter Number of slots in a day " required>
+        </div>
+        <div class="data">
+          <label> Bunk Open Time </label>
+          <input name="initial"  type="text" placeholder="Its in 24hr format  " required>
+       </div> 
+       <div class="data">
+        <label> Bunk close Time </label>
+        <input name="final" type="text" placeholder="Its in 24hr format " required>
+     </div>
+      
+    
+        <div class="btn">
+           <div class="inner"></div>
+           <button type="submit">Add Slots</button>
+        </div>
+     
+     </form>
+  </div>
+</div>
+	
+
+
+<div class="table-container">
+<h1 class="heading"> YOUR SLOTS DATA  </h1>
+
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"  >Booked</th>
+				<th scope="col">Phone Number</th>
+				<th scope="col" >Slot Timing </th>
+				<th scope="col">City</th>
+				<th scope="col" >Delete</th>
+				<th scope="col">Update</th>
+
+    </tr>
+  </thead>
+  <tbody>
+   	<% for(Slot slot : lst){ %>
+    <tr>
+     <td data-lable="is Booked"> <%=slot.getIsBooked()%></td>
+             <td><%=slot.getPhoneNo()%></td>
+				<td  ><%=slot.getSlotTimingStart()%>-<%=slot.getSlotTimingEnd()%></td>
+				<td><%=slot.getAdmCity()%></td>
+			<td >  <a class="delete" href="Slotdelete.html?id=<%=slot.getSlotId()%>" >Delete</a></td>
+			<td>  <a class="update"  href="Slotupdate_form.html?id=<%=slot.getSlotId()%>" >Update</a></td>
+
+    </tr>
+
+	<% } %>
+  </tbody>
+ </table>
+</div>
+
+
+
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"></button>
+
+
+<script>  window.addEventListener('scroll', function(){
+    let navbar = document.querySelector('nav');
+    if(
+       window.pageYOffset >0){
+          navbar.classList.add('sticky');
+       }
+       else{
+          navbar.classList.remove('sticky');
+       }
+    
+  });</script>
+  
+<!--<script>
+		$(document).ready(function (e){
+			$("#add-slot-form").on("submit", function(event) {
+				
+				event .preventDefault();
+				
+				let form = new FormData(this);
+				
+				$.ajax({
+					url : "AddSlot.html", 
+					type : 'POST',
+					data : form,
+					success : function(data, textStatus, jqXHR) {
+						if (data.trim()=='done') {
+							swal("Good job!", "saved successfully", "success");
+						} else {
+							swal("Error!", "Something went wrong try again...", "error");
+						}
+					},
+					error : fuction(jqXHR, textStatus, errorThrown) {
+						swal("Error!", "Something went wrong try again...", "error");
+					},
+					processData : false,
+					contentType : false
+				})
+			})
+		}) 
+	</script> -->
+	
+ <script>
+     setTimeout(function(){
+         $('.loader_bg').fadeToggle();
+     }, 1500);
+ </script>
+ <script>
+ //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+ 
+</script>
+ <script src="script.js"></script>
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<!-- add slot js -->
+</body>
+</html>

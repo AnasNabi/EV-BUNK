@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+       
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  nav{
+  width: 100%;
+  position: fixed; 
+height:11vh;
+   top:0 ;
+   left: 0;
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ z-index: 40;
+ 
+}
+ 
+ #myBtn {
+  display: none; 
+  position: fixed; 
+  bottom: 20px;
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50px; /* Rounded corners */
+/* Increase font size */
+  background-image: url(image/scroll-up.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+nav .logo{
+width: 45px;
+height: 45px;
+background-image: url('image/EV_BUNK-removebg-preview.png');
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+
+}
+
+.loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: #212123;
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    background-image: url(image/LOADER.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+
+@media (min-aspect-ratio :16/9){
+  #loader_bg{
+      width: 100%;
+      height: auto;
+  }
+  
+  }
+  @media (max-aspect-ratio :16/9){
+      #loader_bg{
+          width: auto;
+          height: 100%;
+      }
+       }
+
+
+
+nav .logoName a{
+  
+  display: flex;
+  width: auto;
+  color: #fff;
+  text-decoration: none;
+
+}
+nav .nav-logo-span{
+   margin-left: 5px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  
+
+}
+nav .logoName{
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  position: relative;
+  cursor: default;
+  width: auto;
+  
+  letter-spacing: 0.2;
+  letter-spacing: 0.3px;
+}
+nav .logoName:after{
+  width: 0px;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+
+  background-color: whitesmoke;
+  height: 2px;
+  transition: 0.3s;
+}
+nav .logoName:hover::after{
+  width: 100%;
+
+}
+
+
+
+nav .nav-ul li {
+    list-style: none;
+    display:inline-block;
+    margin-left: 40px;
+    
+}
+
+nav .nav-ul .nav-li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  position: relative;
+  cursor: default;
+  width: 100;
+  letter-spacing: 0.2;
+  letter-spacing: 0.3px;
+
+}
+.nav-li a:after {
+  width: 0px;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+
+  background-color: whitesmoke;
+  height: 2px;
+  transition: 0.3s;
+}
+.nav-li a:hover:after {
+  width: 100%;
+}
+
+nav.sticky{
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 10px 10px 0 rgb(0,0,0,0.5);
+
+  
+
+
+}
+nav.sticky .logo{
+  background-image: url('image/EV_BUNK_black.png') ;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+ 
+}
+
+nav.sticky .nav-ul li a{
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  position: relative;
+  cursor: default;
+  width: 100;
+  letter-spacing: 0.2;
+  letter-spacing: 0.3px;
+  font-weight: bold;
+}
+nav.sticky .nav-ul li a:after{
+  width: 0px;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: black;
+  height: 2px;
+  transition: 0.3s;
+}
+nav.sticky .nav-ul li a:hover::after{
+  width: 100%;
+
+}
+nav.sticky .logoName a{
+  color: black;
+}
+
+nav.sticky .logoName{
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  position: relative;
+  cursor: default;
+  width: 150px;
+  letter-spacing: 0.2;
+  letter-spacing: 0.3px;
+}
+nav.sticky .logoName:after{
+  width: 0px;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: black;
+  height: 2px;
+  transition: 0.3s;
+}
+nav.sticky .logoName:hover::after{
+  width: 100%;
+
+}
+
+
+  
+  
+  
+  
+  
+  
+  
+  body{
+      font-family: 'Poppins', sans-serif;
+      -webkit-user-select: none; 
+      -moz-user-select: none; 
+      -ms-user-select: none; 
+      user-select: none; 
+      background-color: rgb(44 45 54); 
+  
+  }
+  
+
+
+
+  .cont{
+
+  height:auto;
+
+   display:flex;
+   flex-wrap:wrap;
+   margin-top:90px;
+    background-color:rgba(255,255,255,0.5);
+    border-radius:50px;
+     
+   
+  }
+
+  .container{
+   border-radius:50px;
+    border: #fff solid;
+    margin: 50px;
+   display:flex;
+   flex-wrap:wrap;
+   background-color:white;
+   padding:20px;
+  justify-content:space-evenly;
+    
+  }
+  .body-search{   
+   margin: 5px;
+    background-color: rgb(44,45,50);
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    color: #fff;
+    border:black solid;
+    box-shadow: 0px 10px 10px 0 rgb(0,0,0,0.5);
+    border-radius:50px;
+    
+  }
+    .body-search h1 {
+ 
+   
+   margin-bottom: 10px;
+
+    
+
+  }
+  .body-search p{
+  
+  margin: 5px 0;
+  
+
+}
+.body-search .book{
+  text-decoration:none;
+    border: green solid;
+    width: 100px;
+    background: transparent;
+    color: green;
+    font-size: 20px;
+    border-radius: 30px;
+    margin: auto;
+    text-align:center;
+   
+}
+.body-search-cont{
+
+    width: 100%;
+    display: flex;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+    height: 280px;
+    flex-direction: column;
+
+}
+.body-search .book:hover{
+    border:green solid;
+    border-radius: 30px;
+    background-color: green;
+    color: white;
+
+}

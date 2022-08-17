@@ -1,0 +1,139 @@
+<%@page import="entity.Slot"%>
+<%@page import="entity.Admin"%>
+<%@page import="service.AdminServiceImp"%>
+<%@page import="service.AdminService"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="entity.Message"%>
+<%	
+
+String p1 = request.getParameter("id");
+int id = Integer.parseInt(p1);
+AdminService slotService = new AdminServiceImp();
+Slot slot = slotService.get(id); 
+
+%>    
+   
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="log.css" />
+  
+    <!-- title icon  -->
+       <title>EV Bunk | Book</title>
+       <link rel="icon" href="image/fev.ico" sizes="32X32" type="image/icon type">
+       <!-- font link -->
+       
+ 
+       <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+       
+  </head>
+  <body>
+  
+  
+  
+
+
+    
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+        
+        
+        
+          <form  action="book.html" method="post" class="sign-in-form" onsubmit="return numberValid();">
+            <h2 class="title">Book Your Slot</h2>
+            <input type="hidden" name="slot_id" value="<%=slot.getSlotId()%>" />
+	    <input type="hidden" name="adm_id" value="<%=slot.getAdmId()%>" />
+		<input type="hidden" name="isBooked" value="<%=slot.getIsBooked()%>" />
+            <div class="input-field">
+              <i class="fas fa-solid fa-phone"></i>
+              <input type="text" id="mobile" value="" name="phone_no" placeholder="Enter Your Mobile Number" />
+            </div>
+            <span id="messages"></span>
+            <div class="input-field">
+              <i class="fas fa-solid fa-hourglass-half"></i>
+               <input type="text"  value="<%=slot.getSlotTimingStart()%>-<%=slot.getSlotTimingEnd()%>" placeholder="Timing" readonly />
+            </div>                                                                     
+            <div class="input-field">
+           <i class="fas fa-solid fa-gas-pump"></i>
+              <input type="text" placeholder="Bunk Name" readonly />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-solid fa-city"></i>
+              <input type="text" name="adm_city" value="<%=slot.getAdmCity()%>"  placeholder="Address" readonly  />
+            </div> 
+          
+           <input type="submit" value="Book" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            
+            </div>
+          </form>
+          <div>${result}</div>
+
+          <!-- / -->
+          
+        </div>
+      </div>
+
+      <div class="panels-container">
+       
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+              ex ratione. Aliquid!
+            </p>
+            <a style="padding:5px 30px; text-decoration:none;" class="btn transparent" href="index.html" id="sign-up-btn">
+              Home
+            </a>
+          </div>
+          <img src="image/log.svg" class="image" alt="" />
+        </div>
+      
+      
+      
+    <script>
+    function numberValid(){
+    	 var a= document.getElementById("mobile").value;
+    	 if(a==""){
+    		 document.getElementById("messages").innerHTML="Please Fill Mobile Number";
+    		 return false;
+    	 }
+    	 if (isNaN(a)){
+    		 document.getElementById("messages").innerHTML="Enter Only Numeric Values";
+    		 return false;
+    	 }
+    	 if (a.length<10){
+    		 document.getElementById("messages").innerHTML="Mobile Number Must be 10 digits";
+    		 return false; 
+    	 }
+    	 if (a.length>10){
+    		 document.getElementById("messages").innerHTML="Mobile Number Must be 10 digits";
+    		 return false; 
+    	 }
+    	 if (a.charAt(0)!=9 && a.charAt(0)!=8 && a.charAt(0)!=7 &&a.charAt(0)!=6 ){
+    		 document.getElementById("messages").innerHTML="Mobile Number Must  be correct";
+    		 return false;  
+    	 }
+    	 
+    }
+
+    </script>
+    <style>
+    #messages{
+    color:red;
+    }
+    
+    
+    </style>
+  </body>
+</html>

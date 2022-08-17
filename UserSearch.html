@@ -1,0 +1,167 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="entity.Admin"%>
+<%@page errorPage="error_page.html"%>
+<%@page import="entity.Slot"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="service.AdminServiceImp"%>
+<%@page import="service.AdminService"%>
+<%@page import="entity.User"%>
+<%@page import="entity.Message"%>
+
+ <%
+
+AdminService adminService = new AdminServiceImp();
+String search = request.getParameter("search");
+ArrayList<Slot> lst =  adminService.getSlotByLocation(search);
+ %> 
+
+
+
+<html>
+<head>
+
+    <!-- Style sheet link -->
+  
+    <link rel="stylesheet" href="search.css">
+    
+  
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://kit.fontawesome.com/13a51c690d.js" crossorigin="anonymous"></script>
+
+<!-- title icon  -->
+   <title>EV Bunk | Search</title>
+   <link rel="icon" href="image/fev.ico" sizes="32X32" type="image/icon type">
+   
+   
+   <!-- font link -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+   
+
+
+</head>
+<body>
+
+
+
+
+    <nav class= "nav">
+        <div class="logoName">
+           <a href="index.html">
+               <div  class="logo"></div>
+               <span class="nav-logo-span">EV BUNK</span> 
+             </a>
+           </div>
+           
+           <ul class="nav-ul">
+               <li class="nav-li" ><a href="index.html" >Home</a></li>
+               <li class="nav-li"><a href="login_page.html">Login</a></li>
+               <li class="nav-li" ><a href="register_page.html">Register</a></li>
+               <li class="nav-li"><a>About Us</a></li></ul>
+             
+      
+           </ul>
+        <!-- nav bar tri color  
+     
+        <svg
+        class="nav-waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+        style="opacity: 50%;"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax">
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="0"
+            fill="#FF5733"
+          />
+      
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="5"
+            fill="#fff"
+          />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#138808" />
+        </g>
+      </svg>
+     
+ <!-- nav bar tri color -->  
+</nav>
+	<div class="container-slot">
+	</div>
+	
+
+
+  <div class="cont">
+   <div class="container">
+  		<%
+			if (lst.isEmpty()) {
+				Message msg = new Message("No Slots Found!!", "error", "alert-danger");
+				session.setAttribute("msg", msg);
+				response.sendRedirect("index.html");
+			} else {
+			
+			for(Slot slot : lst){ %>
+			
+                <div class="body-search">
+                 <div class="body-search-cont">
+         <h1> Bunk Name </h1>
+       <p> slot timing : <%=slot.getSlotTimingStart()%>-<%=slot.getSlotTimingEnd()%> </p>
+      <p> Address:  </p>
+     <p>City :	<%=slot.getAdmCity()%> </p>
+     <p> State :</p>
+     
+    <a class="book"  href="book_form.html?id=<%=slot.getSlotId()%>"  > Book</a> 
+			
+</div></div>
+    
+
+	<% } 
+			}%>
+			</div><br>
+</div>
+  
+  <button onclick="topFunction()" id="myBtn" title="Go to top"></button>
+  <!-- scroll up -->
+<script>
+ //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+ 
+</script>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="service.AdminServiceImp"%>
+<%@page import="entity.Message"%>
+<%@page import="service.AdminService"%>
+<jsp:useBean id="admin" class="entity.Admin"></jsp:useBean>
+<%
+	AdminService  adminService= new AdminServiceImp();  
+	String admin_email = request.getParameter("admin_email");
+	String admin_password = request.getParameter("admin_password");
+	String admin_address= request.getParameter("admin_address");
+	String admin_city= request.getParameter("admin_city");
+	String admin_state= request.getParameter("admin_state");
+	int count=0;
+	for(int i=0;i<admin_password.length();i++ ){
+		 if(i != ' ') 
+		        count = count + 1;  
+	}
+	
+	
+	if (count<8){
+		Message msg = new Message("Invalid email or password ! Try Again", "error", "alert-danger");
+		session.setAttribute("msg", msg);
+		response.sendRedirect("register_page.html");
+	}
+	else {
+		
+		admin.setAdminEmail(admin_email);
+		admin.setAdminPassword(admin_password);	
+		admin.setAdminAddress(admin_address);	
+		admin.setAdminLocation(admin_city);	
+		admin.setAdminState(admin_state);	
+		adminService.add(admin);						
+		response.sendRedirect("login_page.html");
+	}
+		
+	
+	
+	
+%>

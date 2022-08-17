@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 
 <html>
@@ -5,6 +8,7 @@
 
     <!-- Style sheet link -->
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="waves.css">
     <!-- CSS only -->
 
 <!-- JavaScript Bundle with Popper -->
@@ -18,12 +22,17 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+  
   </head>
 
 <body >
     
 <!--Pre loader-->
-    <div id="preloader"> </div>
+  <div class="loader_bg">
+      <div class="loader">
+      </div>
+  </div>
+
 
 
 
@@ -44,12 +53,12 @@
               </a>
             </div>
             <ul class="nav-ul">
-               <li class="nav-li" ><a >Home</a></li>
-               <li class="nav-li"><a href="login.html">Login</a></li>
-               <li class="nav-li" ><a href="register.html">Register</a></li>
+               <li class="nav-li" ><a href="index.html">Home</a></li>
+               <li class="nav-li"><a href="login_page.html">Login</a></li>
+               <li class="nav-li" ><a href="register_page.html">Sign Up</a></li>
                <li class="nav-li"><a>About Us</a></li>
             </ul>
-         <!-- nav bar tri color  
+         <!-- nav bar tri color  -->
       
          <svg
          class="nav-waves"
@@ -99,14 +108,170 @@
             </div>
           </span> 
          
-          <form   class="search-box" action="UserSearch.jsp"  method="post" >
+          <form   class="search-box" action="UserSearch.html"  method="post" >
             <input class="search-txt"required type="text" placeholder=" Search for the city"  name="search">
          </form>
-  
+       
+            <!--  <% Message msg = (Message) session.getAttribute("msg");
+						if (msg != null) {
+						%> <div class="alert <%= msg.getCssClass() %>" role="alert">
+						    <div class="popup" id="popup"  >
+                          <img src="image/sad.gif" >
+                            <h2 >No Slots Found!!</h2>
+							<p>Sorry, curently No slots are available in your area, kindly wait for sometime and try again later!!</p>
+							<button type="button" onclick="closePopup()" > ok</button>
+      					</div>
+      					</div>
+                          
+ <script>
+ 
+let popup=document.getElementById("popup");
+function closePopup(){
+	popup.classList.add("closepopup");
+	
+}
+</script>
+<style>
+.popup {
+  width: 400px;
+  background-color: white;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  padding: 0 30px 30px ;
+  color: #333;
+  transition: transform 0.4s,top 0.4s;
+  z-index: 50;
 
-        </div>
+
+}
+
+
+.popup img{
+  width: 180px;
+  margin-top: -50px;
+ 
+  border:none;
+  
+}.popup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+
+}
+
+.popup button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #6fd649;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+
+}
+.closepopup{
+transform: translate(-50%,-50%)scale(0.1);
+visibility:hidden;
+z-index:-9999;
+top:0;
+}
+</style>
+
+						<% session.removeAttribute("msg");
+						} %>
+						
+</div>
+			
+			
+						 <% Message msgbook = (Message) session.getAttribute("msg_book"); 
+						 if (msgbook!= null) {	%>	 
+	        	<div  class="alert <%= msgbook.getCssClass() %>" role="alert">						
+		        <div class="popup" id="pop"  >\
+		    <!--   <img src="image/check-green.gif" > 
+               <img src="image/blush.gif" >  
+                 <h2 >Thank You!!</h2>
+                <%= msgbook.getContent() %> 
+                <p>We are glad that you choose Us. &#128516</p>
+                 <button type="button" onclick="closePopup()" > ok</button>
+                 </div>
+             </div>    
+             
+             
+ <script>
+ 
+let pop=document.getElementById("popup");
+function closePopup(){
+	popup.classList.add("closepopup");
+	
+}
+</script>
+             
+
+<style>
+.popup {
+  width: 400px;
+  background-color: white;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  padding: 0 30px 30px ;
+  color: #333;
+  transition: transform 0.4s,top 0.4s;
+  z-index: 50;
+
+
+}
+
+
+.popup img{
+  width: 180px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  
+}.popup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+
+}
+
+.popup button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #6fd649;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+
+}
+.closepopup{
+transform: translate(-50%,-50%)scale(0.1);
+visibility:hidden;
+z-index:-9999;
+top:0;
+}
+</style>
+             <% session.removeAttribute("msg_book");} %>
+        
           </div>
-         
+        -->
       </section>
       
  <!--end of nav bar-->
@@ -230,7 +395,7 @@
      <p>Earn with us. Become a part of Statiq’s EV charging network. Be a proud owner of India's smartest and most affordable EV Charging station.  From installation to smart metering and secure payments, we are there with you in this.
      </p>
      <h4>Just Click the button below and Join us.</h4>
-     <a href=""> Join Us !!</a>
+     <a href="register_page.html"> Join Us !!</a>
   </div>
 
 
@@ -242,11 +407,7 @@
 <!-- //fouter// -->
 
 </div>
-
-
-
-
-</div.>
+</div>
 
  <!--<div class="wave-body"> -->
    
@@ -262,9 +423,9 @@
 
       <div class="part2">
          <div class="link">
-      <p > <a href="index.html">Homepage </a></p>
-      <p> <a href="#">Login</a></p>
-      <p><a href="#">Register</a></p>
+      <p > <a class="home">Homepage </a></p>
+      <p> <a href="login_page.html">Login</a></p>
+      <p><a href="register_page.html">Register</a></p>
       <p><a href="#">About us</a></p>
          </div>
 
@@ -286,52 +447,83 @@
          </div>
       </div>
   </div>
-
-  <svg
-  class="waves"
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 24 150 28"
-  preserveAspectRatio="none"
-  shape-rendering="auto"
->
-  <defs>
-    <path
-      id="gentle-wave"
-      d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-    />
-  </defs>
-  <g class="parallax">
-    <use
-      xlink:href="#gentle-wave"
-      x="48"
-      y="0"
-      fill="#FF5733"
-    />
-
-    <use
-      xlink:href="#gentle-wave"
-      x="48"
-      y="5"
-      fill="#fff"
-    />
-    <use xlink:href="#gentle-wave" x="48" y="7" fill="#138808" />
-  </g>
-</svg>
-
+   <div>
+   
+   
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+         
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="#ff5733"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgb(255,255,255)"
+            />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(0,128,0)" />
+          </g>
+        </svg>
+      </div>
+  
 </div>   
 
 <!-- footer -->
+<button onclick="topFunction()" id="myBtn" title="Go to top"></button>
 
 
       
 
 
+ <script>
+     setTimeout(function(){
+         $('.loader_bg').fadeToggle();
+     }, 1500);
+ </script>
+<script>
+ //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+ 
+</script>
 
 
- <!-- js links -->
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src="script.js"></script>
+
 
 
 </body>
