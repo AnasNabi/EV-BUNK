@@ -296,6 +296,9 @@ nav.sticky .logoName:hover::after{
 
 
 /*  Web Name on video  */
+.front{
+
+}
 .front-name{
 text-align:center;
 
@@ -582,9 +585,11 @@ box-shadow: 0px 0px 10px 0 rgb(0,0,0,0.5);
     width: 500px;
     margin:  100px 0 0 150px ;
    padding: 20px 0;
-    backdrop-filter: blur(20px);
- background-color:  rgba(12.94,12.94,13.73,0.3);
- box-shadow: 0 0 20px 0 rgba(255,255,255, 0.5)
+ transition: box-shadow .25s ease-in;
+
+}
+.container-reg-box:hover {
+  box-shadow: rgba(12.94,12.94,13.73, 0.5) 5px 3px 10px 3px,rgba(12.94,12.94,13.73,0.4) 10px 6px  10px 6px,rgba(12.94,12.94,13.73,0.3)15px 9px 15px 9px ;
 }
 
  
@@ -594,6 +599,7 @@ box-shadow: 0px 0px 10px 0 rgb(0,0,0,0.5);
    font-size: 30px;
    margin-bottom: 20px;
   }
+
   .container-reg-box p{
    padding:0 5px;
     margin-bottom: 20px;
